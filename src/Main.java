@@ -15,5 +15,24 @@ public class Main {
         System.out.println("Classe = "+neuronio.getSaida(new double[]{-2,-2}));
 
 
+        Neuronio neuronio1 = new Neuronio(1);
+
+        neuronio1.setBias(3);
+        neuronio1.setPesos(new double[]{2});
+        
+        neuronio1.setFuncaoAtivacao(new FuncaoAtivacao() {
+            @Override
+            public double getValor(double juncaoAditiva) {
+                return juncaoAditiva;
+            }
+        });
+
+        System.out.println("Classe 2 = "+neuronio1.getSaida(new double[]{0}));
+        System.out.println("Classe 2 = "+neuronio1.getSaida(new double[]{1}));
+        System.out.println("Classe 2 = "+neuronio1.getSaida(new double[]{2}));
+        System.out.println("Classe 2 = "+neuronio1.getSaida(new double[]{3}));
+        System.out.println("Classe 2 = "+neuronio1.getSaida(new double[]{4}));
+
+
     }
 }
